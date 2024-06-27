@@ -1,22 +1,18 @@
 import { state } from "./state.js";
-import { startTimer } from "./timer.js";
+import { startTimer } from "./timer.js"
 
-
-
-const startBtn=document.querySelector(".control__btn_start");
+const startBtn=document.querySelector(".control__btn_start")
 
 export const initControl=()=>{
-  startBtn.addEventListener("click", ()=>{
-
+  startBtn.addEventListener("click",()=>{
     if(state.isActive){
-      clearTimeout(state.timerId);
+      clearTimeout(state.timerId)
       state.isActive=false;
-      startBtn.textContent="Pause"
+      startBtn.textContent="Start";
     }else{
       state.isActive=true;
-      startBtn.textContent="Start";
+      startBtn.textContent="Pause"
       startTimer();
     }
-  
-})
+  })
 }
